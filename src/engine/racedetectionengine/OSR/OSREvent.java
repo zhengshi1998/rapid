@@ -264,6 +264,9 @@ public class OSREvent extends RaceDetectionEvent<OSRState> {
                 }
 
                 if (checkRace(e1, e2, thId, this.getThread().getId(), state)) {
+                    System.out.println("Found race between events with global id " + e1.auxId + " and " +
+                            e2.auxId + ", the source loc are " + e1.location + " and " + e2.location);
+                    System.out.println();
                     state.racyEvents.add(e2.auxId);
                     state.racyLocations.add(e2.location);
                     reInit(state);
@@ -322,6 +325,9 @@ public class OSREvent extends RaceDetectionEvent<OSRState> {
                 }
 
                 if (checkRace(e1, e2, thId, this.getThread().getId(), state)) {
+                    System.out.println("Found race between events with global id " + e1.auxId + " and " +
+                            e2.auxId + ", the source loc are " + e1.location + " and " + e2.location);
+                    System.out.println();
                     state.racyLocations.add(e2.location);
                     state.racyEvents.add(e2.auxId);
                     reInit(state);
